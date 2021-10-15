@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'users',
-    'tracker'
+    'tracker',
+    'journal'
 ]
 
 CORS_ALLOW_CREDIENTIALS = True
