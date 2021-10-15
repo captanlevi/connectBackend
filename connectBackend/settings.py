@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "users.User"
 
 # Application definition
 
@@ -37,6 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheader',
+    'rest_framework',
+    'users',
+    'tracker'
+]
+
+CORS_ALLOW_CREDIENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:4200"
 ]
 
 MIDDLEWARE = [
