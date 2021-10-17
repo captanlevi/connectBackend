@@ -17,8 +17,10 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 from journal.urls import urlpatterns as journalPatterns
+from users.urls import urlpatterns as usersPatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('journal/', include(journalPatterns))
+    path('journal/', include(journalPatterns)),
+    path('users/', include(usersPatterns))
 ]
