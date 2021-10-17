@@ -12,6 +12,3 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, null=False, blank=False)
     username = models.CharField(max_length= 200)
     dob = models.DateField(null = False, blank=False)
-
-    
-
