@@ -7,8 +7,8 @@ from django.contrib.auth.models import (AbstractUser)
 class User(AbstractUser):
     
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["username", "dob"]
+    REQUIRED_FIELDS = []
 
     email = models.EmailField(unique=True, null=False, blank=False)
-    username = models.CharField(max_length= 200)
-    dob = models.DateField(null = False, blank=False)
+    username = models.CharField(max_length= 200, null = True,blank= True)
+    dob = models.DateField(null = True, blank= True)
