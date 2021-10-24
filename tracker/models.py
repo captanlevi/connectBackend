@@ -22,3 +22,4 @@ class Task(models.Model):
     task_deadline = models.DateTimeField()
     done_at = models.DateTimeField(blank= True, null= True)
     task_type = models.SmallIntegerField(choices= TASK_TYPES)
+

@@ -17,7 +17,7 @@ def generateAccessToken(user):
         'iat': datetime.datetime.utcnow()
     }
 
-    accessToken = jwt.encode(payload = accessTokenPayload , key = settings.SECRET_KEY, algorithm= 'HS256' ).decode('utf-8')
+    accessToken = jwt.encode(payload = accessTokenPayload , key = settings.SECRET_KEY, algorithm= 'HS256' )
 
     return accessToken
 
@@ -28,7 +28,7 @@ def generateRefreshToken(user, token_version = None):
         'iat': datetime.datetime.utcnow()
     }
     refreshToken = jwt.encode(
-        refreshTokenPayload, settings.REFRESH_TOKEN_SECRET, algorithm='HS256').decode('utf-8')
+        refreshTokenPayload, settings.REFRESH_TOKEN_SECRET, algorithm='HS256')
 
     return refreshToken
 

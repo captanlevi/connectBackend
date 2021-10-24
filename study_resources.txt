@@ -1,0 +1,1 @@
+https://soshace.com/dockerizing-django-with-postgres-redis-and-celery/   (how to dockerize)

@@ -47,7 +47,7 @@ def registerView(request :rest_framework.request.Request ):
 
     try:
         user = User.objects.get(email = email_id)
-        Response(UserSerializer(user).data)
+        return Response(UserSerializer(user).data)
     except ObjectDoesNotExist:
         user_data = request.data
         user_data["email"] = email_id
@@ -188,3 +188,10 @@ def logoutView(request):
     Apart for deleting the cookies , we also need to mark the accessToken as blacklisted till the expiration time
     """
     return res
+
+
+@api_view(["GET"])
+def test(request):
+    all_objects = User.objects.all()
+    serializer = UserSerializer(instance= all_objects, many = True)
+    return Response(serializer.data)

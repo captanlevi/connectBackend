@@ -1,0 +1,4 @@
+docker build -t connect-backend .
+docker stop connect
+docker rm connect  
+docker run -d -it -p 8000:8000 --name=connect connect-backend
