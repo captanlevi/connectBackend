@@ -41,7 +41,6 @@ def verifyGoogleAccessCode(tokenId : str) -> User:
     res = requests.get(url)
     if(res.status_code != 200):
         raise exceptions.AuthenticationFailed("Google account is invalid")
-    
     verified_dict = res.json()
     if not verified_dict:
         raise exceptions.AuthenticationFailed("Google account is invalid")

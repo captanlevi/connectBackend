@@ -32,6 +32,18 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "users.User"
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'users.auth.SafeJWTAuthentication',
+    ),
+    
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated', # make all endpoints private
+    )
+}
+
+
 # Application definition
 
 INSTALLED_APPS = [

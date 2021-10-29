@@ -42,8 +42,10 @@ def registerView(request :rest_framework.request.Request ):
     if not authorizationHeader:
         raise exceptions.AuthenticationFailed("Must provide google access key id in the authorizationHeader")
     
+
     tokenId = authorizationHeader.split()[1]
     email_id :str =  verifyGoogleAccessCode(tokenId)
+
 
     try:
         user = User.objects.get(email = email_id)

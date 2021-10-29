@@ -25,12 +25,6 @@ def debug_task(self):
 
 app.conf.beat_schedule = {
     #Scheduler Name
-    'print-time-twenty-seconds': {
-        # Task Name (Name Specified in Decorator)
-        'task': 'print_time',  
-        # Schedule      
-        'schedule': 20.0, 
-    },
     'move_to_lazy': {
         # Task Name (Name Specified in Decorator)
         'task': 'move_to_lazy',  
