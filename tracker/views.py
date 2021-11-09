@@ -1,5 +1,6 @@
 from django.core import exceptions
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -15,9 +16,10 @@ from users.models import User
 
 
 @api_view(["POST", "GET"])
-def taskView(request):
+def taskView(request : Request):
     if(request.method == "GET"):
-        all_objects = Task.objects.all()
+        user = request.user
+        all_objects = Task.objects.filter(user_id = user.id)
         serializer = TaskSerializer(instance= all_objects, many = True)
         return Response(serializer.data)
 

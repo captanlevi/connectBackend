@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from journal.urls import urlpatterns as journalPatterns
 from users.urls import urlpatterns as usersPatterns
+from tracker.urls import urlpatterns as trackerPatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('journal/', include(journalPatterns)),
-    path('users/', include(usersPatterns))
+    path('users/', include(usersPatterns)),
+    path('tracker/', include(trackerPatterns))
 ]

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from rest_framework import exceptions, serializers
 import rest_framework
+
+from users.models import User
 from .models import Journal
 from .serializers import JournalSerializer
 from rest_framework import status
@@ -13,7 +15,9 @@ from django.core.exceptions import ObjectDoesNotExist
 @api_view(["GET", "POST"])
 def journalView(request : Request):
     if(request.method == "GET"):
-        journals = Journal.objects.all()
+        user : User = request.user
+        journals = Journal.objects.filter(user_id = user.id)
+        print(journals)
         serializer = JournalSerializer(journals, many = True)
         return Response(serializer.data)
 
