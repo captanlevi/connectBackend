@@ -2,3 +2,9 @@ requests==2.26.0
 Django==3.2.8
 djangorestframework==3.12.4
 PyJWT==2.3.0
+whitenoise
+django-spa
+celery
+redis
+django-cors-headers
+gunicorn
