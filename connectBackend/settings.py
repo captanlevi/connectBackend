@@ -27,9 +27,9 @@ SECRET_KEY = 'django-insecure-qmxyr(4l@ss6s=z!)#9e6qdxlxj^qfe_ho_ez^qm9j%6-f_bfd
 REFRESH_TOKEN_SECRET = "asdasd321lnfdslknalskdnasdfos;difjhovhjvcjlv"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = "users.User"
 
@@ -64,9 +64,10 @@ INSTALLED_APPS = [
 
 CORS_ALLOW_CREDIENTIALS = True
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:4200"
+    "http://localhost:4200",
+    "http://localhost:8000"
 ]
-
+CORS_ALLOW_ALL_ORIGINS = True
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
